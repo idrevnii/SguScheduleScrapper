@@ -7,7 +7,7 @@ const api = axios.create({
   timeout: 3000
 })
 
-export async function getPage(url: string) {
+export async function getPage(url: string): Promise<string | void> {
   return api
     .get<RawHtml>(url)
     .then((response) => response.data)
